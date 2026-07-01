@@ -1,5 +1,52 @@
-/* Cartaz de cartas - versão aprimorada */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0b5d1e, #1c8c3a);
+    color: white;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    font-size: 4rem;
+    color: #ffd700;
+    text-shadow: 3px 3px 10px black;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.3rem;
+}
+
+/* Banner principal */
+.banner {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Cartaz de cartas */
 .cartaz {
     display: flex;
     justify-content: center;
@@ -20,10 +67,28 @@
     align-items: center;
     font-size: 2rem;
     font-weight: bold;
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
     position: relative;
     cursor: pointer;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
     transition: all 0.4s ease;
+}
+
+/* Cantos das cartas */
+.carta::before {
+    content: attr(data-valor);
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 0.9rem;
+}
+
+.carta::after {
+    content: attr(data-valor);
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-size: 0.9rem;
+    transform: rotate(180deg);
 }
 
 /* Distribuição em leque */
@@ -50,26 +115,73 @@
     z-index: 4;
 }
 
-/* Efeito ao passar o mouse */
+/* Animação ao passar o mouse */
 .carta:hover {
     transform: translateY(-25px) scale(1.08);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.9);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.9);
 }
 
-/* Cantos das cartas */
-.carta::before {
-    content: attr(data-valor);
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    font-size: 0.9rem;
+/* Botão */
+.btn {
+    display: inline-block;
+    background: #ffd700;
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.carta::after {
-    content: attr(data-valor);
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    font-size: 0.9rem;
-    transform: rotate(180deg);
+.btn:hover {
+    background: #ffea6b;
+    transform: scale(1.05);
 }
+
+/* Regras */
+.regras {
+    max-width: 800px;
+    margin: 40px auto;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.regras h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffd700;
+}
+
+.regras ul {
+    line-height: 2;
+    padding-left: 20px;
+}
+
+/* Contato */
+.contato {
+    text-align: center;
+    padding: 30px;
+    background: #111;
+}
+
+.contato h3 {
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.telefone {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #25d366;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    color: #ccc;
+}
+
+/* teste robson */
